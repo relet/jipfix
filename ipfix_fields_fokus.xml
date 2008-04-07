@@ -1,0 +1,19 @@
+<field-array>
+  <field>
+    <eno>12325</eno>
+    <ftype>178</ftype>
+    <length>8</length>
+    <coding>2</coding>
+    <name>rttmean_usec</name>
+    <documentation>FOKUS mean rtt in us</documentation>
+  </field>
+  <field>
+    <eno>12325</eno>
+    <ftype>179</ftype>
+    <length>8</length>
+    <coding>2</coding>
+    <name>rttmin_usec</name>
+    <documentation>FOKUS minimum rtt in us</documentation>
+  </field>
+</field-array>
+
