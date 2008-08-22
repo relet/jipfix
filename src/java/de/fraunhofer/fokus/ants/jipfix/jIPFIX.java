@@ -2,6 +2,7 @@ package de.fraunhofer.fokus.ants.jipfix;
 
 import java.io.File;
 import java.util.Hashtable;
+
 import de.fraunhofer.fokus.ants.jipfix.data.*;
 
 /**
@@ -64,7 +65,7 @@ public class jIPFIX implements MPollLoopExitListener, IPFIXRawCollectorListener 
   }
 
   /**
-  * retreive available information for a specific source identifier
+  * retrieve available information for a specific source identifier
   * @param odid the source identifier
   * @return     a source (SNode) object
   */
@@ -73,7 +74,7 @@ public class jIPFIX implements MPollLoopExitListener, IPFIXRawCollectorListener 
     return (o==null)?null:(IPFIXSNode)o;
   }
   /**
-  * retreive available information for a specific template identifier
+  * retrieve available information for a specific template identifier
   * @param tid the template identifier
   * @return    a template (TNode) object
   */
@@ -89,6 +90,16 @@ public class jIPFIX implements MPollLoopExitListener, IPFIXRawCollectorListener 
     new jIPFIX().exampleCollector();    
   }
 
+  public void addVendorInformationElements(String filename) {
+	  IPFIXFieldType[] elements = IPFIXFieldType.readFile(filename);
+	  if (elements == null) return; 
+	  
+	  if (ipfixAddVendorInformationElements(elements) < 0) {
+		  System.err.println("IPFIX AddVIE failed.");
+	      System.exit(1);
+	  }
+  }
+  
 /* PRIVATE DEFINITONS ********************************************************/  
   /* private fields */
   private Hashtable sources=new Hashtable();
