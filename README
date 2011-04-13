@@ -1,0 +1,34 @@
+= jipfix - a java wrapper for the ipfix library = 
+
+== Features ==
+
+Contains what you need to build an IPFIX Collector (the receiving end) using the C libpifix library and the Java Native Interface.
+
+This library is to be considered unstable. 
+
+== Bugs ==
+
+ * NTP and UINT data elements are still returned in (signed) BigInteger format. 
+ * ~~Float data elements are currently not supported. They crash the library.~~ Fixed!
+
+== Get it == 
+
+ * Get libipfix at http://libipfix.sf.net
+ * {{{git clone http://relet.net/svn/jipfix/.git jipfix}}}
+ * make (or read the BUILD file, if it does not work).
+
+== Getting started ==
+
+ * Test the example collector by running {{{./exampleCollector.sh}}}
+ * Have a look at the main method in jIPFIX.java and the ExampleCollector class.
+ * there's some further javadoc in the {{{doc/}}} folder.
+
+== Licence ==
+
+GPL.
+
+== Contact ==
+
+ * relet jabber.ccc.de
+ * thomas.hirsch gmail com
+
